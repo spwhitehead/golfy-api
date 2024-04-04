@@ -12,9 +12,3 @@ class Course(BaseModel):
     name: str
     location: str
     num_holes: int
-
-
-class Player(BaseModel):
-    id: UUID
-    name: str
-    handicap: float
