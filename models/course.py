@@ -1,3 +1,4 @@
+from uuid import UUID
 from pydantic import BaseModel
 
 
@@ -7,6 +8,7 @@ from pydantic import BaseModel
 # num holes
 
 class Course(BaseModel):
+    id: UUID
     name: str
     location: str
     num_holes: int
