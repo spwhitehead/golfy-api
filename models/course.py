@@ -12,3 +12,9 @@ class Course(BaseModel):
     name: str
     location: str
     num_holes: int
+
+
+class CreateCourseRequest(BaseModel):
+    name: str
+    location: str
+    num_holes: int
