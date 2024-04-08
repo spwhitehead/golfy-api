@@ -18,3 +18,7 @@ class CreateCourseRequest(BaseModel):
     name: str
     location: str
     num_holes: int
+
+
+class CreateCourseResponse(BaseModel):
+    id: UUID

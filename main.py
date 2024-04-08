@@ -68,9 +68,17 @@ async def add_course(course_detail: CreateCourseRequest) -> uuid.UUID:
 
 
 @app.put("/course/{course_id}")
-async def update_course(course_id):
+async def update_course(course_id, update_course_request: CreateCourseRequest):
     if course_id not in courses:
         raise HTTPException(status_code=404, detail="Course not found")
+
+    courses[course_id] = Course(
+        id=course_id,
+        name=update_course_request.name,
+        location=update_course_request.location,
+        num_holes=update_course_request.num_holes
+    )
+    return ("Course updated successfully")
 
 
 @app.delete("course/{course_id}")
