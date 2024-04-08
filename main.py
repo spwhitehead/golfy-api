@@ -75,4 +75,7 @@ async def update_course(course_id):
 
 @app.delete("course/{course_id}")
 async def delete_course(course_id):
-    pass
+    if course_id not in courses:
+        raise HTTPException(status_code=404, detail="Course not found")
+    courses.pop(course_id)
+    return ("Course deleted successfully")
